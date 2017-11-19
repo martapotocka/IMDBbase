@@ -26,9 +26,9 @@ if not os.path.isfile(name_file):
 
 print(title_file + " and " + name_file + " downloaded.")
 
-# analyze_input_files(name_file,title_file,known_for_file)
-# title_to_db(title_file)
-# name_to_db(name_file)
+analyze_input_files(name_file,title_file,known_for_file)
+title_to_db(title_file)
+name_to_db(name_file)
 known_for_to_db(known_for_file)
 
 print("Script ended succesfully!")
