@@ -5,14 +5,14 @@ def remove_first_line(fname):
     """ Removing first line of file """
     with codecs.open(fname, 'r', 'utf-8') as fin:
         data = fin.read().splitlines(True)
-    with codecs.open('temp_file.txt', 'w','utf-8') as fout:
+    with codecs.open('temp_file.tsv', 'w','utf-8') as fout:
         fout.writelines(data[1:])
 
     fin.close()
     fout.close()
     # Delete original file and rename temp file to original name
     os.remove(fname)
-    os.rename('temp_file.txt',fname)
+    os.rename('temp_file.tsv',fname)
 
 def analyze_input_files(name_file,title_file,known_for_file):
     """ Create properly formatted name and known_for files ready to import to database.
@@ -33,7 +33,7 @@ def analyze_input_files(name_file,title_file,known_for_file):
 
     remove_first_line(name_file)
     f_in = codecs.open(name_file, 'r','utf-8')
-    f_out_name = codecs.open('name_temp.txt', 'w','utf-8')
+    f_out_name = codecs.open('name_temp.tsv', 'w','utf-8')
     f_out_relation = codecs.open(known_for_file, 'w','utf-8')
     table = f_in.read().splitlines(True)
 
@@ -51,7 +51,7 @@ def analyze_input_files(name_file,title_file,known_for_file):
     f_in.close()
     f_out_name.close()
     f_out_relation.close()
-    
+
     # Delete original file and rename temp file to original name
     os.remove(name_file)
-    os.rename('name_temp.txt',name_file)
+    os.rename('name_temp.tsv',name_file)

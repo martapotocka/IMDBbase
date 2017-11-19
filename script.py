@@ -8,10 +8,10 @@ import os.path
 
 
 title_url = "https://www.dropbox.com/s/3do9bu0awq048uh/title.basics.tsv.gz?dl=1"
-title_file = "title.txt"
+title_file = "title.tsv"
 name_url = "https://www.dropbox.com/s/xaidig3yw2viyym/name.basics.tsv.gz?dl=1"  # dl=1 - download
-name_file = "name.txt"
-known_for_file = "known_for.txt"
+name_file = "name.tsv"
+known_for_file = "known_for.tsv"
 
 
 print("Script started...")
